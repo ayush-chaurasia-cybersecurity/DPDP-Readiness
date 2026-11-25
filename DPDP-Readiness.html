@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DPDP Readiness Assessment | Deloitte India Enterprise Security</title>
+<style>
+:root{--ink:#12202b;--mut:#5a6874;--bg:#f2f4f6;--card:#fff;--line:#d5dbe1;--acc:#26890D;--brand:#86BC25;--blue:#0076A8;--red:#b3261e;--amb:#a35f00;--grn:#1d7a46}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+header{background:#000;color:#fff;padding:16px 24px 18px;border-bottom:4px solid var(--brand)}
+.brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.logo{font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.logo b{color:var(--brand)}
+.unit{font-size:14px;color:#d8dde1;border-left:1px solid #555;padding-left:14px}
+header h1{margin:14px 0 0;font-size:22px;font-weight:650;letter-spacing:-.01em}
+header p{margin:4px 0 0;color:#c4cbd1;max-width:75ch;font-size:13px}
+main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;max-width:1280px;margin:0 auto;padding:20px}
+@media(max-width:900px){main{grid-template-columns:1fr}}
+section{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin-bottom:16px}
+h2{margin:0 0 4px;font-size:17px}
+h3{margin:0;font-size:15px}
+.sub{color:var(--mut);font-size:13px;margin:0 0 12px}
+.row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin:8px 0}
+label.chk{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+input[type=text],select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:4px;min-width:240px}
+.ctl{border-top:1px solid var(--line);padding:12px 0}
+.ctl[hidden]{display:none}
+.ctl p{margin:0 0 4px}
+.ref{color:var(--mut);font-size:12.5px}
+.ev{font-size:12.5px;color:var(--mut)}
+.w{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-left:6px;color:var(--mut)}
+.w.h{border-color:var(--red);color:var(--red)}
+.seg{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.seg label{border:1px solid var(--line);border-radius:4px;padding:3px 10px;font-size:13px;cursor:pointer;user-select:none}
+.seg input{position:absolute;opacity:0}
+.seg label:has(input:checked){background:var(--brand);border-color:var(--brand);color:#000;font-weight:600}
+.seg label:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
+aside{position:sticky;top:12px;align-self:start}
+@media(max-width:900px){aside{position:static}}
+.score{font-size:46px;font-weight:700;line-height:1}
+.band{font-weight:650;margin-left:8px}
+.bar{height:8px;background:#e6eaee;border-radius:4px;overflow:hidden;margin:3px 0 9px}
+.bar i{display:block;height:100%}
+.dn{display:flex;justify-content:space-between;font-size:13px}
+.note{font-size:13px;background:#eef3f4;border-left:3px solid var(--acc);padding:8px 10px;margin:10px 0}
+.note.bad{background:#fbeeed;border-color:var(--red)}
+ol.gaps{padding-left:18px;margin:6px 0;font-size:13px}
+ol.gaps li{margin-bottom:6px}
+button{font:inherit;padding:6px 12px;border:1px solid var(--ink);background:#fff;border-radius:4px;cursor:pointer;margin:2px 4px 2px 0}
+button.p{background:#000;border-color:#000;color:#fff}
+button.p:hover{background:var(--acc);border-color:var(--acc)}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+footer{background:#fff;border-top:4px solid var(--brand);color:var(--mut);font-size:12.5px;padding:22px 20px 26px}
+.fi{max-width:1280px;margin:0 auto}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 28px}
+footer h4{margin:0 0 4px;font-size:13px;color:var(--ink)}
+footer p{margin:0 0 6px}
+footer .fl{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink)}
+@media print{header p,button,.seg label:not(:has(input:checked)){display:none}aside{position:static}main{display:block}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><span class="logo" role="img" aria-label="Deloitte">Deloitte<b>.</b></span><span class="unit">Deloitte India &nbsp;|&nbsp; Enterprise Security</span></div>
+<h1>DPDP Readiness Assessment</h1>
+<p>Control-level assessment against the DPDP Act, 2023 and DPDP Rules, 2025 (G.S.R. 846(E), 13 Nov 2025). Built for CISOs and privacy leaders. Runs entirely in your browser; nothing is transmitted to a server.</p>
+</header>
+<main>
+<div>
+<section id="prof">
+<h2>1. Applicability and classification</h2>
+<p class="sub">Determines which controls apply. Answers drive scope, SDF screening and conditional controls.</p>
+<div class="row"><label>Organisation <input type="text" id="org" placeholder="Client name" autocomplete="off"></label></div>
+<div class="row">
+<label>Processes digital personal data of individuals in India, or offers goods or services to them from abroad (s.3)?
+<select id="scope"><option value="y">Yes</option><option value="n">No</option><option value="u">Unsure</option></select></label>
+<label>Role <select id="role"><option value="f">Data Fiduciary (decides purpose and means)</option><option value="p">Data Processor only</option></select></label>
+</div>
+<div class="row" id="flags"></div>
+<div id="cls" class="note"></div>
+</section>
+<div id="ctls"></div>
+</div>
+<aside>
+<section>
+<h2 id="oname">Results</h2>
+<div><span class="score" id="sc">0</span><span class="band" id="bd"></span></div>
+<p class="sub" id="cov"></p>
+<div id="doms"></div>
+<div id="flag"></div>
+<h3>Priority gaps</h3>
+<ol class="gaps" id="gaps"></ol>
+<p class="sub" id="dl"></p>
+<button class="p" id="ex">Export JSON</button><button id="pr">Print / PDF</button><button id="rs">Reset</button>
+</section>
+</aside>
+</main>
+<footer>
+<div class="fi">
+<div class="fg">
+<div><h4>What this tool does</h4>
+<p>Gives a structured, first-pass view of how prepared an organisation is for the Digital Personal Data Protection Act, 2023 and the DPDP Rules, 2025. It screens applicability, flags Significant Data Fiduciary indicators, and scores 38 controls across ten domains so teams can see priority gaps and decide where a deeper review is warranted.</p></div>
+<div><h4>How it works</h4>
+<p>The assessor classifies the organisation, then rates each applicable control from 0 (none) to 3 (operating and evidenced). Each control is weighted 1 to 3 by regulatory consequence, and the score is the weighted share of maximum points over answered, applicable controls. Any weight-3 control rated 0 caps the rating at Developing. Penalty tiers shown come from the Schedule to the Act. Processing happens locally in the browser.</p></div>
+<div><h4>Accuracy and limitations</h4>
+<p>Controls and references are drawn from the text of the Act and the Rules as notified on 13 Nov 2025. Weights and rating bands reflect professional judgement and have not been statistically validated or calibrated against enforcement outcomes. Results depend on self-reported inputs and are not verified against evidence. The tool does not cover sector regulation (for example RBI, IRDAI, SEBI, CERT-In), future government orders on cross-border transfer or localisation, or SDF notification decisions.</p></div>
+<div><h4>Disclaimer</h4>
+<p>This tool is an indicative aid for discussion. It is not legal advice, an audit, an assurance engagement, a certification of compliance, or a formal opinion of Deloitte. Penalty figures are statutory maximums, not forecasts. Organisations should validate conclusions against the notified Act, Rules and subsequent orders and take professional advice before acting.</p></div>
+</div>
+<p class="fl"><b>Deloitte India | Enterprise Security.</b> Internal tool, version <span id="ver"></span>. Deloitte refers to Deloitte Touche Tohmatsu Limited and its member firms and related entities; use of the Deloitte name and logo is subject to Deloitte brand guidelines.</p>
+</div>
+</footer>
+<script>
+"use strict";
+const VER="1.0.0", DEADLINE=new Date("2027-05-13T00:00:00+05:30");
+/* Domains: key -> [label, suggested engagement focus] */
+const DM={
+G:["Governance and inventory","Data discovery, RoPA and privacy operating model"],
+N:["Notice and consent","Notice and consent remediation, consent ledger design"],
+S:["Security safeguards","Rule 6 security gap assessment and control uplift (crypto, IAM, logging)"],
+B:["Breach management","Breach response playbook, 72-hour reporting tabletop"],
+R:["Retention and erasure","Retention schedule and automated deletion"],
+P:["Data Principal rights","Rights, grievance and nominee workflow"],
+C:["Children and disability","Verifiable consent and age-assurance design"],
+V:["Processors and vendors","Third-party privacy and security assurance"],
+X:["Cross-border and government access","Transfer mapping and localisation readiness"],
+D:["Significant Data Fiduciary","SDF readiness: DPO, DPIA, independent audit"]};
+/* Control: [id, weight 1-3, statement, legal ref, evidence to request, cond] cond: c=children, s=SDF, t=Third Schedule class */
+const C=[
+["G1",2,"A DPO or named contact is published and accountable for Data Principal queries.","s.8(9); Rule 9","Published contact on site/app; included in every rights response"],
+["G2",2,"A personal data inventory or RoPA covers systems, purposes, processors and data flows.","s.8(4); s.6(10)","Current RoPA, data-flow maps, system owners"],
+["G3",1,"Leadership receives privacy and breach risk reporting; owners and budget are assigned.","s.8(4)","Board or ExCo papers, RACI"],
+["N1",3,"Notice is standalone, in plain language, with itemised data and specific purposes.","s.5(1); Rule 3(a)-(b)","Notice per touchpoint, legal sign-off"],
+["N2",2,"Notice is offered in English and Eighth Schedule languages and states how to withdraw, exercise rights and complain to the Board.","s.5(3); Rule 3(c)","Language versions, UI screenshots"],
+["N3",3,"Consent is free, specific, unbundled, by clear affirmative action and limited to necessary data.","s.6(1)","Consent UX review; no pre-ticked or bundled consent"],
+["N4",3,"Notice and consent records are retained and can be produced as proof.","s.6(10)","Consent ledger with version, timestamp, purpose"],
+["N5",2,"Withdrawal is as easy as giving consent and stops processing, including at processors.","s.6(4),(6); Rule 3(c)(i)","Withdrawal flow test, propagation evidence"],
+["N6",2,"Pre-commencement consents have been re-noticed or a plan exists.","s.5(2)","Re-notice plan and status"],
+["N7",2,"Every processing activity maps to consent or a s.7 legitimate use; no unsupported legitimate-interest reliance.","s.4; s.7","Lawful-basis register"],
+["S1",3,"Personal data is protected by encryption, masking, obfuscation or tokenisation.","Rule 6(1)(a)","Crypto standard, key management, coverage report"],
+["S2",3,"Access to systems holding personal data is controlled: least privilege, MFA, privileged access reviews.","Rule 6(1)(b)","IAM and PAM reviews, MFA coverage"],
+["S3",3,"Access to personal data is logged, monitored and reviewed to detect unauthorised access.","Rule 6(1)(c)","SIEM use cases, data-store log coverage"],
+["S4",2,"Backups and recovery sustain processing after loss or compromise and are tested.","Rule 6(1)(d)","DR test reports, restore evidence"],
+["S5",3,"Logs and related personal data are retained for at least one year.","Rule 6(1)(e); Rule 8(3)","Retention configuration, storage evidence"],
+["S6",2,"Technical and organisational measures are documented and tested (VAPT, vulnerability management, secure SDLC).","Rule 6(1)(g); s.8(4)","VAPT reports, framework mapping (ISO 27001 or similar)"],
+["B1",3,"Detection and triage can recognise a personal data breach, including accidental disclosure or loss of access.","s.2(u); s.8(6)","IR plan, detection metrics"],
+["B2",3,"Playbook notifies the Board without delay and files a detailed report within 72 hours.","Rule 7(2)","Runbook, templates, tabletop in last 12 months"],
+["B3",3,"Affected Data Principals are told the nature, consequences, mitigation, safety steps and contact.","Rule 7(1)","Notification templates and channels"],
+["R1",2,"Retention schedule sets a period per purpose and is reconciled with the one-year log rule and sector law.","s.8(7); Rule 8","Approved retention schedule"],
+["R2",2,"Erasure runs technically across production, backups, analytics and processors.","s.8(7); s.12(3)","Deletion job logs, processor attestations"],
+["R3",1,"Inactivity-based erasure with 48-hour advance notice is implemented.","Rule 8(1)-(2); Third Schedule","Workflow and notification evidence","t"],
+["P1",2,"Published channel for access, correction, erasure and nomination, with identity verification.","s.11-14; Rule 14(1),(4)","Portal and SOP"],
+["P2",2,"Access responses summarise data, processing activities and recipients.","s.11","Response template, sample responses"],
+["P3",2,"Grievances are resolved within 90 days with technical measures to track SLAs.","s.13; Rule 14(3)","Ticketing SLA reports"],
+["C1",3,"Verifiable parent or guardian consent with adult identity check (identity or age tokens, DigiLocker).","s.9(1); Rules 10-11","Verification design, test cases","c"],
+["C2",3,"No tracking, behavioural monitoring or targeted ads to children unless a Fourth Schedule exemption is documented.","s.9(2)-(3); Rule 12","Exemption analysis, ad and SDK audit","c"],
+["V1",3,"Processor contracts require security safeguards, breach duties, erasure and controlled sub-processing.","s.8(2); Rule 6(1)(f)","Contract clause review"],
+["V2",2,"Processor risk is assessed and monitored; the fiduciary can evidence oversight.","s.8(1)","Vendor tiering, assessments"],
+["V3",2,"Processors retain logs for one year and erase data on instruction.","Rule 8(3); s.8(7)(b)","Processor attestations"],
+["X1",2,"Cross-border transfers are inventoried and can adapt to government orders.","s.16; Rule 15","Transfer register, architecture options"],
+["X2",1,"A process handles government information requests, including non-disclosure directions.","s.36; Rule 23","Legal SOP, request log"],
+["D1",3,"India-based DPO accountable to the Board or equivalent body.","s.10(2)(a)","Appointment letter, reporting line","s"],
+["D2",3,"Independent data auditor engaged; annual DPIA and audit with significant findings reported to the Board.","s.10(2)(b),(c); Rule 13(1)-(2)","Audit and DPIA reports","s"],
+["D3",2,"Due diligence confirms algorithmic and technical measures do not risk Data Principal rights.","Rule 13(3)","Algorithm risk review","s"],
+["D4",2,"Able to keep specified personal and traffic data within India if notified.","Rule 13(4)","Data localisation design","s"]];
+/* Schedule tiers in INR crore */
+const TIER={S:250,V1:250,B:200,C:200,D:150};
+const tier=id=>TIER[id]||TIER[id[0]]||50;
+const MAT=["None","Ad hoc","Defined","Operating and evidenced"];
+const FL=[["ecom","E-commerce entity with 2 crore or more registered users in India"],["game","Online gaming intermediary with 50 lakh or more registered users"],["soc","Social media intermediary with 2 crore or more registered users"],["kids","Processes personal data of children (under 18) or of persons with a lawful guardian"],["big","Large volume or sensitive data (health, financial, biometric, location) or relevance to State security or electoral risk"],["sdf","Treat as Significant Data Fiduciary (assessor override)"],["xb","Transfers personal data outside India"]];
+const S={org:"",scope:"y",role:"f",f:{},a:{}};
+const $=i=>document.getElementById(i);
+const sdfLikely=()=>S.f.ecom||S.f.game||S.f.soc||S.f.big||S.f.sdf;
+function act(c){const k=c[0][0],x=c[5];
+if(S.role==="p"&&"NPCD".includes(k))return false;
+if(x==="c"&&!S.f.kids)return false;
+if(x==="s"&&!sdfLikely())return false;
+if(x==="t"&&!(S.f.ecom||S.f.game||S.f.soc))return false;
+return true}
+function build(){
+$("flags").innerHTML=FL.map(f=>`<label class="chk"><input type="checkbox" data-f="${f[0]}"> <span>${f[1]}</span></label>`).join("");
+let h="";
+for(const k in DM){
+h+=`<section data-d="${k}"><h2>${DM[k][0]}</h2><p class="sub">${DM[k][1]}</p>`;
+for(const c of C.filter(c=>c[0][0]===k)){
+h+=`<div class="ctl" data-id="${c[0]}"><p><b>${c[0]}</b> ${c[2]}<span class="w ${c[1]===3?"h":""}">weight ${c[1]}</span></p><div class="ref">${c[3]}</div><div class="ev">Request: ${c[4]}</div><div class="seg" role="radiogroup" aria-label="${c[0]} maturity">`+
+MAT.map((m,i)=>`<label><input type="radio" name="${c[0]}" value="${i}">${i} ${m}</label>`).join("")+`<label><input type="radio" name="${c[0]}" value="x">N/A</label></div></div>`}
+h+="</section>"}
+$("ctls").innerHTML=h}
+function calc(){
+const r={n:0,ans:0,p:0,m:0,dom:{},gaps:[],crit:false,exp:0};
+for(const k in DM)r.dom[k]={p:0,m:0,n:0};
+for(const c of C){if(!act(c))continue;const v=S.a[c[0]];
+if(v==="x")continue;
+r.n++;r.dom[c[0][0]].n++;
+if(v===undefined)continue;
+r.ans++;const w=c[1];
+r.p+=w*v/3;r.m+=w;r.dom[c[0][0]].p+=w*v/3;r.dom[c[0][0]].m+=w;
+if(v<=1){r.gaps.push({c,v});r.exp=Math.max(r.exp,tier(c[0]))}
+if(w===3&&v===0)r.crit=true}
+r.s=r.m?Math.round(r.p/r.m*100):0;
+r.gaps.sort((a,b)=>b.c[1]-a.c[1]||a.v-b.v||tier(b.c[0])-tier(a.c[0]));
+let b=r.s>=80?3:r.s>=60?2:r.s>=35?1:0;
+if(r.crit)b=Math.min(b,1);
+r.b=b;return r}
+const BL=["Critical","Developing","Established","Strong"],BC=["var(--red)","var(--amb)","var(--blue)","var(--acc)"];
+function update(){
+S.org=$("org").value;S.scope=$("scope").value;S.role=$("role").value;
+document.querySelectorAll("[data-f]").forEach(e=>S.f[e.dataset.f]=e.checked);
+document.querySelectorAll(".ctl").forEach(e=>{const c=C.find(x=>x[0]===e.dataset.id);e.hidden=!act(c)});
+document.querySelectorAll("section[data-d]").forEach(s=>s.hidden=!s.querySelector(".ctl:not([hidden])"));
+const cl=[];
+cl.push(S.scope==="n"?"Likely outside the Act under s.3. Confirm there is no processing in connection with offering goods or services to individuals in India. Scoring is shown for reference.":S.scope==="u"?"Applicability unconfirmed. Resolve s.3 scope before relying on the score.":"In scope of the Act.");
+if(S.role==="p")cl.push("Processor only: obligations sit mainly with the client Data Fiduciary (s.8(1)), but contracts will flow security, breach and erasure duties to this entity. Fiduciary-only domains are hidden.");
+cl.push(sdfLikely()?"SDF indicators present: SDF controls are included (designation is by Central Government notification, s.10).":"No SDF indicators: SDF controls hidden.");
+if(S.f.xb)cl.push("Cross-border transfers: conditions will follow government orders (s.16, Rule 15).");
+$("cls").className="note"+(S.scope==="n"?" bad":"");$("cls").textContent=cl.join(" ");
+const r=calc();
+$("oname").textContent=S.org?S.org:"Results";
+$("sc").textContent=r.s;$("sc").style.color=BC[r.b];
+$("bd").textContent=BL[r.b];$("bd").style.color=BC[r.b];
+$("cov").textContent=`${r.ans} of ${r.n} applicable controls assessed`+(r.ans<r.n?". Score covers answered controls only.":".");
+$("doms").innerHTML=Object.keys(DM).filter(k=>r.dom[k].n).map(k=>{const d=r.dom[k],p=d.m?Math.round(d.p/d.m*100):null;
+return `<div class="dn"><span>${DM[k][0]}</span><span>${p===null?"not assessed":p+"%"}</span></div><div class="bar"><i style="width:${p||0}%;background:${p===null?"transparent":p>=80?BC[3]:p>=60?BC[2]:p>=35?BC[1]:BC[0]}"></i></div>`}).join("");
+let f="";
+if(r.crit)f+=`<div class="note bad">Critical-gap gate: at least one weight-3 control scored 0, so the rating is capped at Developing.</div>`;
+if(r.exp)f+=`<div class="note">Highest Schedule tier touched by gaps: up to INR ${r.exp} crore (s.33 ceiling for that breach category, not a forecast).</div>`;
+$("flag").innerHTML=f;
+$("gaps").innerHTML=r.gaps.slice(0,8).map(g=>`<li><b>${g.c[0]}</b> ${g.c[2]} <span class="ref">(${g.c[3]}; maturity ${g.v}; ceiling INR ${tier(g.c[0])} cr)</span></li>`).join("")||"<li>No gaps scored 0 or 1.</li>";
+const days=Math.ceil((DEADLINE-new Date())/864e5);
+$("dl").textContent=days>0?`${days} days to the main obligations date (13 May 2027, 18 months from notification). Rule 4 (Consent Managers) is already in force from 13 Nov 2026.`:"Main obligations (Rules 3, 5-16, 22, 23) are in force from 13 May 2027.";
+try{localStorage.setItem("dpdp_ra",JSON.stringify(S))}catch(e){}
+return r}
+function load(){try{const s=JSON.parse(localStorage.getItem("dpdp_ra"));if(!s)return;Object.assign(S,s);
+$("org").value=S.org||"";$("scope").value=S.scope;$("role").value=S.role;
+document.querySelectorAll("[data-f]").forEach(e=>e.checked=!!S.f[e.dataset.f]);
+for(const id in S.a){const e=document.querySelector(`input[name=${id}][value="${S.a[id]}"]`);if(e)e.checked=true}}catch(e){}}
+$("ver").textContent=VER;build();load();update();
+document.addEventListener("change",e=>{const t=e.target;
+if(t.type==="radio")S.a[t.name]=t.value==="x"?"x":+t.value;
+update()});
+$("org").addEventListener("input",update);
+$("ex").onclick=()=>{const r=update();
+const out={tool:"dpdp-readiness-assessment",preparedBy:"Deloitte India, Enterprise Security",version:VER,date:new Date().toISOString(),profile:{org:S.org,scope:S.scope,role:S.role,flags:S.f},score:r.s,rating:BL[r.b],criticalGate:r.crit,coverage:`${r.ans}/${r.n}`,maxScheduleTierCrore:r.exp,answers:S.a,gaps:r.gaps.map(g=>({id:g.c[0],ref:g.c[3],maturity:g.v}))};
+const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:"application/json"}));
+a.download=`dpdp-assessment-${(S.org||"client").replace(/\W+/g,"-").toLowerCase()}.json`;a.click()};
+$("pr").onclick=()=>window.print();
+$("rs").onclick=()=>{if(confirm("Clear all answers?")){try{localStorage.removeItem("dpdp_ra")}catch(e){}location.reload()}};
+</script>
+</body>
+</html>
